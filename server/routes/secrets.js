@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
     !req.body.title ||
     !req.body.secret ||
     !req.body.author ||
-    !req.body.tags
+    !req.body.tag
   ) {
     res.status(400).send("Please fill out all fields");
   }
@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
   secret.title = req.body.title;
   secret.secret = req.body.secret;
   secret.author = req.body.author;
-  secret.tags = req.body.tags;
+  secret.tag = req.body.tag;
   secret.save((err) => {
     if (err) {
       res.status(406).send("Error saving secret");
@@ -51,6 +51,42 @@ router.get("/:id", (req, res) => {
   });
 });
 
-//
+// like a secret
+router.patch("/:id", (req, res) => {
+  Secret.findByIdAndUpdate(
+    req.params.id,
+    { $inc: { likes: 1 } },
+    { new: true },
+    (err, secret) => {
+      if (err) {
+        res.status(404).send("secret not found");
+      } else {
+        res.status(201).json(secret);
+      }
+    }
+  );
+});
+
+// delete a secret
+router.delete("/:id", (req, res) => {
+  Secret.findByIdAndDelete(req.params.id, (err, secret) => {
+    if (err) {
+      res.status(404).send("secret not found");
+    } else {
+      res.status(201).json(`Item ${req.params.id} deleted`);
+    }
+  });
+});
+
+//get a secret based on tags
+router.get("/tags/:tag", (req, res) => {
+  Secret.find({ tags: req.params.tag }, (err, secret) => {
+    if (err) {
+      res.status(404).send("secret not found");
+    } else {
+      res.json(secret);
+    }
+  });
+});
 
 export default router;

@@ -12,7 +12,7 @@ const secretSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  tags: [String],
+  tag: String,
 });
 
 const Secret = mongoose.model("Secret", secretSchema);
