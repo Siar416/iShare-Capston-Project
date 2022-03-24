@@ -2,13 +2,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import doteven from "dotenv";
+import cors from "cors";
+import secretRoutes from "./routes/secrets.js";
 
 const app = express();
 
-import cors from "cors";
-
 app.use(bodyParser.json({ extended: true }));
 app.use(cors());
+app.use("/", secretRoutes);
 
 const PORT = process.env.PORT || 5000;
 
