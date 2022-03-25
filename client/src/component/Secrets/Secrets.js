@@ -1,7 +1,7 @@
 import React from "react";
 import Secret from "../Secret/Secret";
 
-function Secrets({ secrets, handleDelete }) {
+function Secrets({ secrets, setSecrets }) {
   return (
     <div className="secrets">
       <h1>Secrets</h1>
@@ -10,7 +10,7 @@ function Secrets({ secrets, handleDelete }) {
           <Secret
             key={secret._id}
             secret={secret}
-            handleDelete={handleDelete}
+            // handleDelete={handleDelete}
           />
         ))}
       </div>

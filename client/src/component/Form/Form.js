@@ -16,7 +16,7 @@ function Form() {
       title: e.target.title.value,
       secret: e.target.secret.value,
       author: e.target.author.value,
-      tag: "n/a",
+      tag: e.target.tag.value,
     });
 
     axios
@@ -24,7 +24,7 @@ function Form() {
         title: e.target.title.value,
         secret: e.target.secret.value,
         author: e.target.author.value,
-        tag: "n/a",
+        tag: e.target.tag.value,
       })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
@@ -52,6 +52,36 @@ function Form() {
           <label htmlFor="author">Author</label>
           <input type="text" name="author" placeholder="Your alias" />
         </div>
+
+        <div className="form__container">
+          <label>Tag</label>
+          <select name="tag" htmlFor="tag" className="form__container">
+            <option name="shady" value="#shady">
+              #shady
+            </option>
+
+            <option name="funny" value="#funny">
+              #funny
+            </option>
+
+            <option name="scary" value="#scary">
+              #scary
+            </option>
+
+            <option name="mysterious" value="#mysterious">
+              #mysterious
+            </option>
+
+            <option name="adventurous" value="#adventurous">
+              #adventurous
+            </option>
+
+            <option name="cool" value="#cool">
+              #cool
+            </option>
+          </select>
+        </div>
+
         <button>Submit</button>
       </form>
     </div>

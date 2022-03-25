@@ -14,25 +14,11 @@ const App = () => {
       .catch((err) => console.log(err));
   }, [secrets]);
 
-  const handleDelete = (e) => {
-    e.preventDefault();
-    console.log(e.target);
-
-    // delete from server
-    axios
-      .delete(`http://localhost:5000/${e.target.id}`)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-
-    // delete from client
-    setSecrets(secrets.filter((secret) => secret._id !== e.target.id));
-  };
-
   return (
     <div>
       <h1>Hello World</h1>
       <Form />
-      <Secrets secrets={secrets} handleDelete={handleDelete} />
+      <Secrets secrets={secrets} setSecrets={setSecrets} />
     </div>
   );
 };
