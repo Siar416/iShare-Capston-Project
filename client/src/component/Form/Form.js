@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function Form() {
@@ -9,13 +9,6 @@ function Form() {
     tag: null,
   });
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000")
-  //     .then((res) => setFormData(res.data))
-  //     .catch((err) => console.log(err));
-  // }, [formData]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // set state
@@ -25,7 +18,6 @@ function Form() {
       author: e.target.author.value,
       tag: "n/a",
     });
-    console.log("here");
 
     axios
       .post("http://localhost:5000", {
