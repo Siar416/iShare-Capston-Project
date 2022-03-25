@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000")
+      .get("http://localhost:5000/secrets")
       .then((res) => setSecrets(res.data))
       .catch((err) => console.log(err));
   }, [secrets]);

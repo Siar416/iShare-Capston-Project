@@ -20,7 +20,7 @@ function Form() {
     });
 
     axios
-      .post("http://localhost:5000", {
+      .post("http://localhost:5000/secrets", {
         title: e.target.title.value,
         secret: e.target.secret.value,
         author: e.target.author.value,
