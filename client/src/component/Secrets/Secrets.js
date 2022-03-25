@@ -3,16 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Secret from "../Secret/Secret";
 
-function Secrets() {
+function Secrets({ secrets }) {
   // get secrets from database
-  const [secrets, setSecrets] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000")
-      .then((res) => setSecrets(res.data))
-      .catch((err) => console.log(err));
-  }, [secrets]);
 
   return (
     <div className="secrets">
