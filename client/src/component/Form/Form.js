@@ -3,11 +3,18 @@ import axios from "axios";
 
 function Form() {
   const [formData, setFormData] = useState({
-    title: "",
-    secret: "",
-    author: "",
-    tag: "",
+    title: null,
+    secret: null,
+    author: null,
+    tag: null,
   });
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000")
+  //     .then((res) => setFormData(res.data))
+  //     .catch((err) => console.log(err));
+  // }, [formData]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +25,7 @@ function Form() {
       author: e.target.author.value,
       tag: "n/a",
     });
+    console.log("here");
 
     axios
       .post("http://localhost:5000", {
@@ -30,9 +38,9 @@ function Form() {
       .catch((err) => console.log(err));
 
     // clear form
-    e.target.title.value = "";
-    e.target.secret.value = "";
-    e.target.author.value = "";
+    e.target.title.value = null;
+    e.target.secret.value = null;
+    e.target.author.value = null;
   };
 
   return (

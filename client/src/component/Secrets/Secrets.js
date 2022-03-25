@@ -12,7 +12,7 @@ function Secrets() {
       .get("http://localhost:5000")
       .then((res) => setSecrets(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [secrets]);
 
   return (
     <div className="secrets">
