@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.json({ extended: true }));
 app.use(cors());
-app.use("/", secretRoutes);
+app.use("/secrets", secretRoutes);
 
 const PORT = process.env.PORT || 5000;
 
