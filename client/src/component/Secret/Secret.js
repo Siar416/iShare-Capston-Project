@@ -3,13 +3,15 @@ import axios from "axios";
 import trashIcon from "../../assets/icons/trash.svg";
 import heartIcon from "../../assets/icons/heart-fill.svg";
 import { useState } from "react";
+import moment from "moment";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Card } from "react-bootstrap";
 
 function Secret({ secret }) {
-  const [likes, setLikes] = useState(secret.likes);
+  const [likes, setLikes] = useState([]);
+  console.log(secret);
 
   const handleLike = () => {
     axios
@@ -38,12 +40,13 @@ function Secret({ secret }) {
       style={{
         width: "20rem",
         borderRadius: "5%",
+        color: "black",
       }}
     >
       <Card.Body className="card__body">
         <Card.Title>{secret.title}</Card.Title>
-        <Card.Text>{secret.secret}</Card.Text>
-        <Card.Text>{secret.author}</Card.Text>
+        <Card.Text style={{ marginBottom: "10px" }}>{secret.secret}</Card.Text>
+        <Card.Text style={{ marginBottom: "10px" }}>{secret.author}</Card.Text>
         <img
           id={secret._id}
           onClick={handleDelete}
@@ -56,6 +59,9 @@ function Secret({ secret }) {
             right: "7px",
           }}
         />
+        <p style={{ marginBottom: "10px" }}>
+          {moment(secret.datePosted).fromNow()}
+        </p>
         <p>
           <img id={secret._id} onClick={handleLike} src={heartIcon} />
           {likes}

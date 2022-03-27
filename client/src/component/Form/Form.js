@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Form.scss";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -36,56 +37,123 @@ function Form() {
   };
 
   return (
-    <div>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="form__container">
-          <label htmlFor="title">Title</label>
-          <input type="text" name="title" placeholder="Title" />
-        </div>
+    <form class="form" onSubmit={handleSubmit}>
+      <div class="form__group">
+        <label htmlFor="author">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          name="author"
+          placeholder="Your alias"
+        />
+      </div>
 
-        <div className="form__container">
-          <label htmlFor="secret">Secret</label>
-          <input type="text" name="secret" placeholder="Share a secret" />
-        </div>
+      <div class="form-group">
+        <label htmlFor="title">Secret Title</label>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          aria-describedby="emailHelp"
+          placeholder="Share a secret"
+        />
+      </div>
 
-        <div className="form__container">
-          <label htmlFor="author">Author</label>
-          <input type="text" name="author" placeholder="Your alias" />
-        </div>
+      <div class="form-group">
+        <label htmlFor="secret">Secret Message</label>
+        <input
+          class="form-control"
+          name="secret"
+          placeholder="share your secret message"
+        />
+      </div>
 
-        <div className="form__container">
-          <label>Tag</label>
-          <select name="tag" htmlFor="tag" className="form__container">
-            <option name="shady" value="#shady">
-              #shady
-            </option>
+      <div class="form-group">
+        <label>Tag</label>
+        <select name="tag" htmlFor="tag" className="form-control">
+          <option name="shady" value="#shady">
+            #shady
+          </option>
 
-            <option name="funny" value="#funny">
-              #funny
-            </option>
+          <option name="funny" value="#funny">
+            #funny
+          </option>
 
-            <option name="scary" value="#scary">
-              #scary
-            </option>
+          <option name="scary" value="#scary">
+            #scary
+          </option>
 
-            <option name="mysterious" value="#mysterious">
-              #mysterious
-            </option>
+          <option name="mysterious" value="#mysterious">
+            #mysterious
+          </option>
 
-            <option name="adventurous" value="#adventurous">
-              #adventurous
-            </option>
+          <option name="adventurous" value="#adventurous">
+            #adventurous
+          </option>
 
-            <option name="cool" value="#cool">
-              #cool
-            </option>
-          </select>
-        </div>
+          <option name="cool" value="#cool">
+            #cool
+          </option>
+        </select>
+      </div>
 
-        <button>Submit</button>
-      </form>
-    </div>
+      <button type="submit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
   );
+
+  // return (
+  //   <div>
+  //     <form className="form" onSubmit={handleSubmit}>
+  //       <div className="form__container">
+  //         <label htmlFor="title">Title</label>
+  //         <input type="text" name="title" placeholder="Title" />
+  //       </div>
+
+  //       <div className="form__container">
+  //         <label htmlFor="secret">Secret</label>
+  //         <input type="text" name="secret" placeholder="Share a secret" />
+  //       </div>
+
+  //       <div className="form__container">
+  //         <label htmlFor="author">Author</label>
+  //         <input type="text" name="author" placeholder="Your alias" />
+  //       </div>
+
+  //       <div className="form__container">
+  //         <label>Tag</label>
+  //         <select name="tag" htmlFor="tag" className="form__container">
+  //           <option name="shady" value="#shady">
+  //             #shady
+  //           </option>
+
+  //           <option name="funny" value="#funny">
+  //             #funny
+  //           </option>
+
+  //           <option name="scary" value="#scary">
+  //             #scary
+  //           </option>
+
+  //           <option name="mysterious" value="#mysterious">
+  //             #mysterious
+  //           </option>
+
+  //           <option name="adventurous" value="#adventurous">
+  //             #adventurous
+  //           </option>
+
+  //           <option name="cool" value="#cool">
+  //             #cool
+  //           </option>
+  //         </select>
+  //       </div>
+
+  //       <button>Submit</button>
+  //     </form>
+  //   </div>
+  // );
 }
 
 export default Form;
