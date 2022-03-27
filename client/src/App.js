@@ -20,7 +20,6 @@ const App = () => {
   return (
     <div>
       <MainNav />
-      <h1>Hello World</h1>
       <Form />
       <Secrets secrets={secrets} setSecrets={setSecrets} />
     </div>

@@ -1,4 +1,6 @@
 import React from "react";
+import "./MainNav.scss";
+import whisperIcon from "../../assets/icons/whisperIcon.png";
 import {
   Container,
   Navbar,
@@ -14,8 +16,9 @@ function MainNav() {
   return (
     <Navbar bg="drk" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#" style={{ color: "white" }}>
-          Navbar scroll
+        <img className="whisper-icon" src={whisperIcon} />
+        <Navbar.Brand className="title" style={{ color: "white" }}>
+          iShare
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -24,10 +27,11 @@ function MainNav() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1" style={{ color: "white" }}>
+            <Nav.Link className="title" style={{ color: "white" }}>
               About Me
             </Nav.Link>
           </Nav>
+
           <Form className="d-flex">
             <FormControl
               type="search"
@@ -35,7 +39,9 @@ function MainNav() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-light" size="sm">
+              Search
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

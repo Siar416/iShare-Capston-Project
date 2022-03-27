@@ -1,0 +1,27 @@
+.d-flex {
+  align-items: center;
+}
+
+.whisper-icon {
+  background-color: white;
+  border-radius: 5px;
+  border: 0.5px solid #ff00ff;
+}
+
+.whisper-icon:hover {
+  box-shadow: 3px 3px 3px 3px rgba(255, 0, 255, 0.5);
+  padding: 2px;
+  cursor: pointer;
+}
+
+.title {
+  margin-left: 25px;
+}
+
+.title:hover {
+  box-shadow: 3px 3px 3px 3px rgba(255, 0, 255, 0.5);
+  border-radius: 5px;
+  border-radius: 5px;
+  border: 0.5px solid white;
+  padding: 5px;
+}

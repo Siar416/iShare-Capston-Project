@@ -62,7 +62,7 @@ function Form() {
       <div class="form-group">
         <label htmlFor="secret">Secret Message</label>
         <input
-          class="form-control"
+          class="form-control form__input"
           name="secret"
           placeholder="share your secret message"
         />
