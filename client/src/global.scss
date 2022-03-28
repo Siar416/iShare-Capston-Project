@@ -1,6 +1,9 @@
 @use "./styles/partials/reset" as *;
 
 body {
-  background-color: #313639;
+  // background-color: #313639;
+  background: url("./assets/icons/backgroundImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
 }

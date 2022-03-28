@@ -46,28 +46,33 @@ function Secret({ secret }) {
       }}
     >
       <Card.Body className="card__body">
-        <Card.Title>{secret.title}</Card.Title>
-        <Card.Text style={{ marginBottom: "10px" }}>{secret.secret}</Card.Text>
+        <Card.Img />
+        <div className="card__title">
+          <Card.Title>{secret.title}</Card.Title>
+          <img
+            id={secret._id}
+            onClick={handleDelete}
+            src={trashIcon}
+            alt="trash icon"
+          />
+        </div>
         <Card.Text style={{ marginBottom: "10px" }}>{secret.author}</Card.Text>
-        <img
-          id={secret._id}
-          onClick={handleDelete}
-          src={trashIcon}
-          alt="trash icon"
-          style={{
-            cursor: "pointer",
-            position: "absolute",
-            top: "8px",
-            right: "7px",
-          }}
-        />
-        <p style={{ marginBottom: "10px" }}>
-          {moment(secret.datePosted).fromNow()}
-        </p>
-        <p>
-          <img id={secret._id} onClick={handleLike} src={heartIcon} />
-          {likes}
-        </p>
+        <Card.Text style={{ marginBottom: "10px" }}>{secret.secret}</Card.Text>
+        <Card.Text style={{ marginBottom: "10px" }}>{secret.tag}</Card.Text>
+        <div className="card__footer">
+          <p style={{ marginBottom: "10px" }}>
+            {moment(secret.datePosted).fromNow()}
+          </p>
+          <p className="heart">
+            <img
+              className="heart__image"
+              id={secret._id}
+              onClick={handleLike}
+              src={heartIcon}
+            />
+            {likes}
+          </p>
+        </div>
       </Card.Body>
     </Card>
   );

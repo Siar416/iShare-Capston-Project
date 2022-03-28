@@ -1,5 +1,6 @@
 import React from "react";
 import Secret from "../Secret/Secret";
+import "./Secrets.scss";
 
 function Secrets({ secrets }) {
   return (

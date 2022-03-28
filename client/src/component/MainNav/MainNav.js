@@ -20,17 +20,16 @@ function MainNav() {
         <Navbar.Brand className="title" style={{ color: "white" }}>
           iShare
         </Navbar.Brand>
+        <Nav.Link className="title" style={{ color: "white" }}>
+          About Me
+        </Nav.Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
-          >
-            <Nav.Link className="title" style={{ color: "white" }}>
-              About Me
-            </Nav.Link>
-          </Nav>
+          ></Nav>
 
           <Form className="d-flex">
             <FormControl

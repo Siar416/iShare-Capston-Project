@@ -38,16 +38,6 @@ function Form() {
 
   return (
     <form class="form" onSubmit={handleSubmit}>
-      <div class="form__group">
-        <label htmlFor="author">Author</label>
-        <input
-          type="text"
-          class="form-control"
-          name="author"
-          placeholder="Your alias"
-        />
-      </div>
-
       <div class="form-group">
         <label htmlFor="title">Secret Title</label>
         <input
@@ -56,6 +46,16 @@ function Form() {
           name="title"
           aria-describedby="emailHelp"
           placeholder="Title"
+        />
+      </div>
+
+      <div class="form__group">
+        <label htmlFor="author">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          name="author"
+          placeholder="Your alias"
         />
       </div>
 
