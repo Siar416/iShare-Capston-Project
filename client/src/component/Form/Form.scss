@@ -1,4 +1,15 @@
+.form {
+  margin: 0 12px;
+}
+
 .form-control {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+// apply flex column on screen size of below 576px
+@media (max-width: 990px) {
+  .d-flex {
+    flex-direction: column;
+  }
 }

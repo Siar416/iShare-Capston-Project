@@ -55,7 +55,7 @@ function Form() {
           class="form-control"
           name="title"
           aria-describedby="emailHelp"
-          placeholder="Share a secret"
+          placeholder="Title"
         />
       </div>
 
@@ -64,7 +64,7 @@ function Form() {
         <input
           class="form-control form__input"
           name="secret"
-          placeholder="share your secret message"
+          placeholder="Share a secret"
         />
       </div>
 

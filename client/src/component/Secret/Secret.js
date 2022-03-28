@@ -4,6 +4,7 @@ import trashIcon from "../../assets/icons/trash.svg";
 import heartIcon from "../../assets/icons/heart-fill.svg";
 import { useState } from "react";
 import moment from "moment";
+import "./Secret.scss";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,7 +12,8 @@ import { Card } from "react-bootstrap";
 
 function Secret({ secret }) {
   const [likes, setLikes] = useState([]);
-  console.log(secret);
+  // TODO need to figure out why there is an infinit loop
+  // console.log(secret);
 
   const handleLike = () => {
     axios
