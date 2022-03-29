@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function MainNav() {
+function MainNav({ setIsOpen }) {
   return (
     <Navbar bg="drk" expand="lg">
       <Container fluid>
@@ -20,7 +20,11 @@ function MainNav() {
         <Navbar.Brand className="title" style={{ color: "white" }}>
           iShare
         </Navbar.Brand>
-        <Nav.Link className="title" style={{ color: "white" }}>
+        <Nav.Link
+          onClick={() => setIsOpen(true)}
+          className="title"
+          style={{ color: "white" }}
+        >
           About Me
         </Nav.Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
