@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     // TODO need to figure out why there is an infinit loop
-    // console.log("render");
+    console.log("render");
     axios
       .get("http://localhost:5000/secrets")
       .then((res) => setSecrets(res.data))
