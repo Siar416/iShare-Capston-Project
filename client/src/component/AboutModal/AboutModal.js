@@ -1,6 +1,7 @@
 import "./AboutModal.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal } from "react-bootstrap";
+import aboutIcon from "../../assets/icons/aboutIcon.png";
 
 import linkedInIcon from "../../assets/icons/linkedin.png";
 
@@ -16,15 +17,15 @@ const AboutModal = ({ isOpen }) => {
   return (
     <Modal show={() => isOpen(false)} onHide={() => isOpen(false)}>
       <Modal.Header closeButton>
+        <img src={aboutIcon} alt="user icon" />
         <Modal.Title>Hello World...I'm Siar!</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <p>
-          I'm an aspiring software developer, who enjoys learning new skills and
+          An aspiring Web Developer, who enjoys learning new skills and
           technologies. I've always been intersted in tech. and how it can be
           used to solve problems and make a difference. I hope you enjoy my site
-          and would like to connect with me. I'd love to hear from you and
-          connect.
+          and would like to connect with me.
         </p>
       </Modal.Body>
       <Modal.Footer>

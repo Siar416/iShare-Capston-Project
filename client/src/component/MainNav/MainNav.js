@@ -1,6 +1,7 @@
 import React from "react";
 import "./MainNav.scss";
 import whisperIcon from "../../assets/icons/whisperIcon.png";
+import aboutIcon from "../../assets/icons/aboutIcon.png";
 import {
   Container,
   Navbar,
@@ -20,13 +21,15 @@ function MainNav({ setIsOpen }) {
         <Navbar.Brand className="title" style={{ color: "white" }}>
           iShare
         </Navbar.Brand>
-        <Nav.Link
+
+        <Nav
           onClick={() => setIsOpen(true)}
           className="title"
           style={{ color: "white" }}
         >
           About Me
-        </Nav.Link>
+        </Nav>
+
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
