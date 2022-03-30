@@ -82,9 +82,10 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-//get a secret based on tags
+// get a secret by tags
 router.get("/tags/:tag", (req, res) => {
-  Secret.find({ tags: req.params.tag }, (err, secret) => {
+  console.log(req.params);
+  Secret.find({ tag: req.params.tag }, (err, secret) => {
     if (err) {
       res.status(404).send("secret not found");
     } else {

@@ -71,27 +71,27 @@ function Form() {
       <div class="form-group">
         <label>Tag</label>
         <select name="tag" htmlFor="tag" className="form-control">
-          <option name="shady" value="#shady">
+          <option name="shady" value="shady">
             #shady
           </option>
 
-          <option name="funny" value="#funny">
+          <option name="funny" value="funny">
             #funny
           </option>
 
-          <option name="scary" value="#scary">
+          <option name="scary" value="scary">
             #scary
           </option>
 
-          <option name="mysterious" value="#mysterious">
+          <option name="mysterious" value="mysterious">
             #mysterious
           </option>
 
-          <option name="adventurous" value="#adventurous">
+          <option name="adventurous" value="adventurous">
             #adventurous
           </option>
 
-          <option name="cool" value="#cool">
+          <option name="cool" value="cool">
             #cool
           </option>
         </select>

@@ -12,8 +12,11 @@ import {
   Button,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-function MainNav({ setIsOpen }) {
+function MainNav({ setIsOpen, handleSearch }) {
+  // moved handleSearch to App.js
+
   return (
     <Navbar bg="drk" expand="lg">
       <Container fluid>
@@ -38,14 +41,15 @@ function MainNav({ setIsOpen }) {
             navbarScroll
           ></Nav>
 
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={handleSearch}>
             <FormControl
               type="search"
+              name="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-light" size="sm">
+            <Button type="submit" variant="outline-light" size="sm">
               Search
             </Button>
           </Form>

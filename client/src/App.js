@@ -12,9 +12,20 @@ const App = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(e.target.search.value);
+    axios
+      .get(`http://localhost:5000/secrets/tags/${e.target.search.value}`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     // TODO need to figure out why there is an infinit loop
-    console.log("render");
+    // console.log("render");
     axios
       .get("http://localhost:5000/secrets")
       .then((res) => setSecrets(res.data))
@@ -23,7 +34,7 @@ const App = () => {
 
   return (
     <div>
-      <MainNav setIsOpen={setIsOpen} />
+      <MainNav handleSearch={handleSearch} setIsOpen={setIsOpen} />
       {isOpen && <AboutModal isOpen={() => setIsOpen()} />}
 
       <Form />
