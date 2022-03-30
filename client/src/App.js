@@ -18,9 +18,11 @@ const App = () => {
     axios
       .get(`http://localhost:5000/secrets/tags/${e.target.search.value}`)
       .then((res) => {
+        setSecrets(res.data);
         console.log(res.data);
       })
       .catch((err) => console.log(err));
+    e.target.search.value = "";
   };
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const App = () => {
       .get("http://localhost:5000/secrets")
       .then((res) => setSecrets(res.data))
       .catch((err) => console.log(err));
-  }, [secrets, setSecrets]);
+  }, []);
 
   return (
     <div>
