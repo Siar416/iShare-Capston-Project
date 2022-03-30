@@ -2,6 +2,7 @@ import "./AboutModal.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal } from "react-bootstrap";
 import aboutIcon from "../../assets/icons/aboutIcon.png";
+import githubIcon from "../../assets/icons/github.svg";
 
 import linkedInIcon from "../../assets/icons/linkedin.png";
 
@@ -21,6 +22,9 @@ const AboutModal = ({ isOpen }) => {
       <Modal.Footer>
         <a href="https://www.linkedin.com/in/siarwahidi/">
           <img src={linkedInIcon} alt="linked in" />
+        </a>
+        <a href="https://github.com/Siar416">
+          <img src={githubIcon} alt="github" />
         </a>
       </Modal.Footer>
     </Modal>
