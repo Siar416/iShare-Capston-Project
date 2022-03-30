@@ -69,6 +69,7 @@ function Secret({ secret }) {
               id={secret._id}
               onClick={handleLike}
               src={heartIcon}
+              alt="heart icon"
             />
             {likes}
           </p>

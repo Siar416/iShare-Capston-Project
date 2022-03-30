@@ -1,18 +1,16 @@
 import React from "react";
 import "./MainNav.scss";
 import whisperIcon from "../../assets/icons/whisperIcon.png";
-import aboutIcon from "../../assets/icons/aboutIcon.png";
+
 import {
   Container,
   Navbar,
   Nav,
-  NavDropdown,
   Form,
   FormControl,
   Button,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
 
 function MainNav({ setIsOpen, handleSearch }) {
   // moved handleSearch to App.js
@@ -20,16 +18,12 @@ function MainNav({ setIsOpen, handleSearch }) {
   return (
     <Navbar bg="drk" expand="lg">
       <Container fluid>
-        <img className="whisper-icon" src={whisperIcon} />
+        <img className="whisper-icon" src={whisperIcon} alt="logo" />
         <Navbar.Brand className="title" style={{ color: "white" }}>
           iShare
         </Navbar.Brand>
 
-        <Nav
-          onClick={() => setIsOpen(true)}
-          className="title"
-          style={{ color: "white" }}
-        >
+        <Nav onClick={() => setIsOpen(true)} className="title">
           About Me
         </Nav>
 
