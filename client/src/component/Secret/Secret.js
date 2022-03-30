@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 
 function Secret({ secret }) {
-  const [likes, setLikes] = useState([]);
+  const [likes, setLikes] = useState(secret.likes);
   // TODO need to figure out why there is an infinit loop
   // console.log(secret);
 

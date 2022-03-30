@@ -9,30 +9,51 @@ import "./global.scss";
 
 const App = () => {
   const [secrets, setSecrets] = useState([]);
+  const [search, setSearch] = useState("");
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setSearch(e.target.search.value);
+
     console.log(e.target.search.value);
-    axios
-      .get(`http://localhost:5000/secrets/tags/${e.target.search.value}`)
-      .then((res) => {
-        setSecrets(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
-    e.target.search.value = "";
+    // axios
+    //   .get(`http://localhost:5000/secrets/tags/${e.target.search.value}`)
+    //   .then((res) => {
+    //     setSecrets(res.data);
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => console.log(err));
+    // e.target.search.value = "";
   };
 
+  // on mount
   useEffect(() => {
     // TODO need to figure out why there is an infinit loop
     // console.log("render");
-    axios
-      .get("http://localhost:5000/secrets")
-      .then((res) => setSecrets(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+    // axios
+    //   .get("http://localhost:5000/secrets")
+    //   .then((res) => setSecrets(res.data))
+    //   .catch((err) => console.log(err));
+    if (search === "") {
+      axios
+        .get(`http://localhost:5000/secrets`)
+        .then((res) => {
+          setSecrets(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      axios
+        .get(`http://localhost:5000/secrets/tags/${search}`)
+        .then((res) => {
+          setSecrets(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [secrets]);
 
   return (
     <div>
