@@ -1,15 +1,17 @@
+@use "../../styles/partials/colors" as *;
+
 .d-flex {
   align-items: center;
 }
 
 .whisper-icon {
-  background-color: white;
+  background-color: $white;
   border-radius: 5px;
-  border: 0.5px solid white;
+  border: 0.5px solid $white;
 }
 
 .whisper-icon:hover {
-  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255);
+  box-shadow: 0px 0px 10px 0px $white;
   padding: 2px;
   cursor: pointer;
 }
@@ -19,10 +21,10 @@
 }
 
 .title:hover {
-  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255);
+  box-shadow: 0px 0px 10px 0px $white;
   border-radius: 5px;
   border-radius: 5px;
-  border: 0.5px solid white;
+  border: 0.5px solid $white;
   padding: 5px;
 }
 .about {
