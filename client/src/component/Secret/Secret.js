@@ -58,7 +58,9 @@ function Secret({ secret }) {
         </div>
         <Card.Text style={{ marginBottom: "10px" }}>{secret.author}</Card.Text>
         <Card.Text style={{ marginBottom: "10px" }}>{secret.secret}</Card.Text>
-        <Card.Text style={{ marginBottom: "10px" }}>{secret.tag}</Card.Text>
+        <Card.Text className="card__tag" style={{ marginBottom: "10px" }}>
+          #{secret.tag}
+        </Card.Text>
         <div className="card__footer">
           <p style={{ marginBottom: "10px" }}>
             {moment(secret.datePosted).fromNow()}

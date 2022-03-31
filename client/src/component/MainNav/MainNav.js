@@ -39,7 +39,7 @@ function MainNav({ setIsOpen, handleSearch }) {
             <FormControl
               type="search"
               name="search"
-              placeholder="Search"
+              placeholder="Search by tag"
               className="me-2"
               aria-label="Search"
             />

@@ -41,7 +41,7 @@ const App = () => {
         .get(`http://localhost:5000/secrets`)
         .then((res) => {
           setSecrets(res.data);
-          console.log(res.data);
+          // console.log(res.data);
         })
         .catch((err) => console.log(err));
     } else {

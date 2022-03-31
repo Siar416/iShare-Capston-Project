@@ -34,6 +34,7 @@ function Form() {
     e.target.title.value = null;
     e.target.secret.value = null;
     e.target.author.value = null;
+    e.target.tag.value = null;
   };
 
   return (
@@ -41,6 +42,7 @@ function Form() {
       <div>
         <label htmlFor="title">Secret Title</label>
         <input
+          maxLength="60"
           type="text"
           class="form-control"
           name="title"
@@ -52,6 +54,7 @@ function Form() {
       <div>
         <label htmlFor="author">Author</label>
         <input
+          maxLength="60"
           type="text"
           class="form-control"
           name="author"
@@ -62,13 +65,24 @@ function Form() {
       <div>
         <label htmlFor="secret">Secret Message</label>
         <input
+          maxLength="60"
           class="form-control"
           name="secret"
-          placeholder="Share a secret"
+          placeholder="Share secret"
         />
       </div>
 
       <div>
+        <label htmlFor="secret">Tag</label>
+        <input
+          maxLength="60"
+          class="form-control"
+          name="tag"
+          placeholder="Add a tag"
+        />
+      </div>
+
+      {/* <div>
         <label>Tag</label>
         <select name="tag" htmlFor="tag" className="form-control">
           <option name="shady" value="shady">
@@ -95,9 +109,9 @@ function Form() {
             #cool
           </option>
         </select>
-      </div>
+      </div> */}
 
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-outline-light">
         Submit
       </button>
     </form>
