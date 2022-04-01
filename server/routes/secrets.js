@@ -16,9 +16,6 @@ router.get("/", (req, res) => {
 
 // post a secret
 router.post("/", (req, res) => {
-  // validate input
-  // console.log(req.body);
-
   if (
     !req.body.title ||
     !req.body.secret ||
@@ -28,7 +25,6 @@ router.post("/", (req, res) => {
     res.status(400).send("Please fill out all fields");
     return;
   }
-  // console.log(req.body);
 
   const secret = new Secret();
   secret.title = req.body.title;
