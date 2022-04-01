@@ -16,6 +16,13 @@ function Secret({ secret }) {
   // console.log(secret);
 
   const handleLike = () => {
+    // only allow user to like once based on local storage
+    if (localStorage.getItem(secret._id)) {
+      return;
+    }
+    setLikes(likes + 1);
+    localStorage.setItem(secret._id, true);
+
     axios
       .patch(`${process.env.REACT_APP_URL}/${secret._id}`)
       .then((res) => {
@@ -37,6 +44,7 @@ function Secret({ secret }) {
       })
       .catch((err) => console.log(err));
   };
+
   return (
     <Card
       style={{
@@ -81,5 +89,4 @@ function Secret({ secret }) {
     </Card>
   );
 }
-
 export default Secret;
