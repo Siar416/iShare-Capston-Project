@@ -5,10 +5,10 @@ import heartIcon from "../../assets/icons/heart-fill.svg";
 import { useState } from "react";
 import moment from "moment";
 import "./Secret.scss";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Card } from "react-bootstrap";
+
+// const URL = "http://localhost:5000/secrets/";
 
 function Secret({ secret }) {
   const [likes, setLikes] = useState(secret.likes);
@@ -17,7 +17,7 @@ function Secret({ secret }) {
 
   const handleLike = () => {
     axios
-      .patch(`http://localhost:5000/secrets/${secret._id}`)
+      .patch(`${process.env.REACT_APP_URL}/${secret._id}`)
       .then((res) => {
         console.log(res.data.likes);
         setLikes(res.data.likes);
@@ -31,7 +31,7 @@ function Secret({ secret }) {
 
     // delete from server
     axios
-      .delete(`http://localhost:5000/secrets/${e.target.id}`)
+      .delete(`${process.env.REACT_APP_URL}/${e.target.id}`)
       .then((res) => {
         console.log(res);
       })

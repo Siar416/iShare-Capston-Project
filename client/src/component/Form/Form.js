@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Form.scss";
 
+// const URL = "http://localhost:5000/secrets";
+
 function Form() {
   const [formData, setFormData] = useState({
     title: null,
@@ -21,7 +23,7 @@ function Form() {
     });
 
     axios
-      .post("http://localhost:5000/secrets", {
+      .post(process.env.REACT_APP_URL, {
         title: e.target.title.value,
         secret: e.target.secret.value,
         author: e.target.author.value,

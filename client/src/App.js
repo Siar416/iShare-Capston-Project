@@ -38,7 +38,7 @@ const App = () => {
     //   .catch((err) => console.log(err));
     if (search === "") {
       axios
-        .get(`http://localhost:5000/secrets`)
+        .get(process.env.REACT_APP_URL)
         .then((res) => {
           setSecrets(res.data);
           // console.log(res.data);
@@ -46,7 +46,7 @@ const App = () => {
         .catch((err) => console.log(err));
     } else {
       axios
-        .get(`http://localhost:5000/secrets/tags/${search}`)
+        .get(`${process.env.REACT_APP_URL}/tags/${search}`)
         .then((res) => {
           setSecrets(res.data);
           console.log(res.data);
