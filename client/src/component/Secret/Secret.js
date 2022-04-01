@@ -65,7 +65,9 @@ function Secret({ secret }) {
             alt="trash icon"
           />
         </div>
-        <Card.Text style={{ marginBottom: "10px" }}>{secret.author}</Card.Text>
+        <Card.Text style={{ marginBottom: "10px", fontStyle: "italic" }}>
+          {secret.author}
+        </Card.Text>
         <Card.Text style={{ marginBottom: "10px" }}>{secret.secret}</Card.Text>
         <Card.Text className="card__tag" style={{ marginBottom: "10px" }}>
           #{secret.tag}

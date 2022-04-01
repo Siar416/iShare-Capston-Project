@@ -20,13 +20,6 @@ const App = () => {
 
   // on mount
   useEffect(() => {
-    // TODO need to figure out why there is an infinit loop
-    // console.log("render");
-    // axios
-    //   .get("http://localhost:5000/secrets")
-    //   .then((res) => setSecrets(res.data))
-    //   .catch((err) => console.log(err));
-
     if (search === "") {
       axios
         .get(process.env.REACT_APP_URL)
