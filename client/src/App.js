@@ -16,16 +16,6 @@ const App = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.search.value);
-
-    console.log(e.target.search.value);
-    // axios
-    //   .get(`http://localhost:5000/secrets/tags/${e.target.search.value}`)
-    //   .then((res) => {
-    //     setSecrets(res.data);
-    //     console.log(res.data);
-    //   })
-    //   .catch((err) => console.log(err));
-    // e.target.search.value = "";
   };
 
   // on mount
@@ -36,12 +26,12 @@ const App = () => {
     //   .get("http://localhost:5000/secrets")
     //   .then((res) => setSecrets(res.data))
     //   .catch((err) => console.log(err));
+
     if (search === "") {
       axios
         .get(process.env.REACT_APP_URL)
         .then((res) => {
           setSecrets(res.data);
-          // console.log(res.data);
         })
         .catch((err) => console.log(err));
     } else {

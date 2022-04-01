@@ -19,7 +19,7 @@ function MainNav({ setIsOpen, handleSearch }) {
     <Navbar bg="drk" expand="lg">
       <Container fluid>
         <img className="whisper-icon" src={whisperIcon} alt="logo" />
-        <Navbar.Brand className="title" style={{ color: "white" }}>
+        <Navbar.Brand style={{ color: "white", fontSize: "40px" }}>
           iShare
         </Navbar.Brand>
 
