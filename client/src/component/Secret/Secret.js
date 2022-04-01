@@ -50,6 +50,7 @@ function Secret({ secret }) {
         <div className="card__title">
           <Card.Title>{secret.title}</Card.Title>
           <img
+            className="card__trash"
             id={secret._id}
             onClick={handleDelete}
             src={trashIcon}
