@@ -1,5 +1,9 @@
 # iShare-Capston-Project
 
+## logo
+
+![App logo](client/src/assets/images/whisperIcon.png)
+
 ## Introduction
 
 A simple application where people can anonymously share their thoughts and experiences or anything on their
@@ -15,9 +19,10 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 - No need to register
 - No need to log in
 
-## Installation
+## Installation - Run locally
 
 - Install the dependencies
+- check the sample .env file; include localhost:3000, server include localhost:5000
 - Run the command "npm install"
 - Run the command "npm start"
 
@@ -28,8 +33,7 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 - React
 - Node.js
 - Sass
-- bootstrap
-- moment.js
+- Bootstrap
 
 ## future plans
 
