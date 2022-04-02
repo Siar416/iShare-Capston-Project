@@ -70,7 +70,7 @@ function Secret({ secret }) {
         </Card.Text>
         <Card.Text style={{ marginBottom: "10px" }}>{secret.secret}</Card.Text>
         <Card.Text className="card__tag" style={{ marginBottom: "10px" }}>
-          #{secret.tag}
+          {secret.tag}
         </Card.Text>
         <div className="card__footer">
           <p style={{ marginBottom: "10px" }}>

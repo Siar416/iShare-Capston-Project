@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Form.scss";
+const Filter = require("bad-words");
 
 // const URL = "http://localhost:5000/secrets";
 
 function Form() {
+  const filter = new Filter();
   const [formData, setFormData] = useState({
     title: "",
     secret: "",
@@ -61,10 +63,10 @@ function Form() {
     if (!hasError) {
       axios
         .post(process.env.REACT_APP_URL, {
-          title: formData.title,
-          secret: formData.secret,
-          author: formData.author,
-          tag: formData.tag,
+          title: filter.clean(formData.title),
+          secret: filter.clean(formData.secret),
+          author: filter.clean(formData.author),
+          tag: filter.clean(formData.tag),
         })
         .then((res) => {
           console.log(res);
