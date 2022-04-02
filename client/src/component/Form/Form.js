@@ -6,41 +6,55 @@ import "./Form.scss";
 
 function Form() {
   const [formData, setFormData] = useState({
-    title: null,
-    secret: null,
-    author: null,
-    tag: null,
+    title: "",
+    secret: "",
+    author: "",
+    tag: "",
   });
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  //clear form
+  const clearForm = () => {
+    setFormData({
+      title: "",
+      secret: "",
+      author: "",
+      tag: "",
+    });
+  };
+
+  //handle submit and clear the form after submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    // set state
-    setFormData({
-      title: e.target.title.value,
-      secret: e.target.secret.value,
-      author: e.target.author.value,
-      tag: e.target.tag.value,
-    });
-
     axios
       .post(process.env.REACT_APP_URL, {
-        title: e.target.title.value,
-        secret: e.target.secret.value,
-        author: e.target.author.value,
-        tag: e.target.tag.value,
+        title: formData.title,
+        secret: formData.secret,
+        author: formData.author,
+        tag: formData.tag,
       })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-
-    // clear form
-    e.target.title.value = null;
-    e.target.secret.value = null;
-    e.target.author.value = null;
-    e.target.tag.value = null;
+      .then((res) => {
+        console.log(res);
+        setFormData({
+          title: "",
+          secret: "",
+          author: "",
+          tag: "",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
-    <form class="form" onSubmit={handleSubmit}>
+    <form class="form" onSubmit={handleSubmit} onReset={clearForm}>
       <div>
         <label htmlFor="title">Secret Title</label>
         <input
@@ -48,6 +62,8 @@ function Form() {
           type="text"
           class="form-control"
           name="title"
+          value={formData.title}
+          onChange={handleChange}
           aria-describedby="emailHelp"
           placeholder="Title"
         />
@@ -60,6 +76,8 @@ function Form() {
           type="text"
           class="form-control"
           name="author"
+          value={formData.author}
+          onChange={handleChange}
           placeholder="Your alias"
         />
       </div>
@@ -70,6 +88,8 @@ function Form() {
           maxLength="60"
           class="form-control"
           name="secret"
+          value={formData.secret}
+          onChange={handleChange}
           placeholder="Share secret"
         />
       </div>
@@ -80,6 +100,8 @@ function Form() {
           maxLength="60"
           class="form-control"
           name="tag"
+          value={formData.tag}
+          onChange={handleChange}
           placeholder="Add a tag"
         />
       </div>
@@ -115,6 +137,14 @@ function Form() {
 
       <button type="submit" class="btn btn-outline-light">
         Submit
+      </button>
+
+      <button
+        type="reset"
+        style={{ marginLeft: "20px" }}
+        class="btn btn-outline-light"
+      >
+        Reset
       </button>
     </form>
   );
