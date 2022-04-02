@@ -7,7 +7,7 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 
 ## Screen Shot
 
-![App screen shot](client\src\assets\images\ishare-readme-image.PNG)
+![App screen shot](client/assets/images/ishare-readme-image.PNG)
 
 ## Features
 
