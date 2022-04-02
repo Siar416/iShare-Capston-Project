@@ -14,29 +14,32 @@ function Form() {
     tag: "",
   });
 
-  const [formError, setFormError] = useState(false);
+  const [formError, setFormError] = useState({
+    hasError: false,
+    errorMessage: "",
+  });
 
   const validateForm = () => {
-    let formIsValid = false;
+    let hasErrors = false;
+    let errorMessage = "";
 
-    if (!formData.title) {
-      formIsValid = true;
+    if (
+      !formData.title ||
+      !formData.secret ||
+      !formData.author ||
+      !formData.tag
+    ) {
+      hasErrors = true;
+      errorMessage = "Please fill out all fields";
     }
 
-    if (!formData.secret) {
-      formIsValid = true;
+    if (/\s/.test(formData.tag)) {
+      hasErrors = true;
+      errorMessage = "Tags cannot contain spaces";
     }
 
-    if (!formData.author) {
-      formIsValid = true;
-    }
-
-    if (!formData.tag) {
-      formIsValid = true;
-    }
-
-    setFormError(formIsValid);
-    return formIsValid;
+    setFormError({ hasErrors, errorMessage });
+    return hasErrors;
   };
 
   const handleChange = (e) => {
@@ -149,7 +152,7 @@ function Form() {
       </button>
 
       {formError && (
-        <div className="form__validation">Please fill out all fields</div>
+        <div className="form__validation">{`${formError.errorMessage}`}</div>
       )}
     </form>
   );
