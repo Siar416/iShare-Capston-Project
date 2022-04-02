@@ -3,6 +3,7 @@ import Form from "./component/Form/Form";
 import MainNav from "./component/MainNav/MainNav";
 import Secrets from "./component/Secrets/Secrets";
 import AboutModal from "./component/AboutModal/AboutModal";
+import HowToModal from "./component/HowToModal/HowToModal";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./global.scss";
@@ -12,6 +13,8 @@ const App = () => {
   const [search, setSearch] = useState("");
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isOpenHowTo, setIsOpenHowTo] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -40,8 +43,13 @@ const App = () => {
 
   return (
     <div>
-      <MainNav handleSearch={handleSearch} setIsOpen={setIsOpen} />
+      <MainNav
+        handleSearch={handleSearch}
+        setIsOpen={setIsOpen}
+        setIsOpenHowTo={setIsOpenHowTo}
+      />
       {isOpen && <AboutModal isOpen={() => setIsOpen()} />}
+      {isOpenHowTo && <HowToModal shown={() => setIsOpenHowTo()} />}
 
       <Form />
       <Secrets secrets={secrets} setSecrets={setSecrets} />

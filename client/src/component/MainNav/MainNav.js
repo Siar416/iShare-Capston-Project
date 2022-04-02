@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function MainNav({ setIsOpen, handleSearch }) {
+function MainNav({ setIsOpen, handleSearch, setIsOpenHowTo }) {
   // moved handleSearch to App.js
 
   return (
@@ -25,6 +25,10 @@ function MainNav({ setIsOpen, handleSearch }) {
 
         <Nav onClick={() => setIsOpen(true)} className="title">
           About Me
+        </Nav>
+
+        <Nav onClick={() => setIsOpenHowTo(true)} className="title">
+          Help
         </Nav>
 
         <Navbar.Toggle aria-controls="navbarScroll" />
