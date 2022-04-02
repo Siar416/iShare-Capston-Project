@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
   secret.title = req.body.title;
   secret.secret = req.body.secret;
   secret.author = req.body.author;
-  secret.tag = req.body.tag;
+  secret.tag = req.body.tag.replace(/\s/g, "");
   secret.save((err) => {
     if (err) {
       res.status(406).send("Error saving secret");
