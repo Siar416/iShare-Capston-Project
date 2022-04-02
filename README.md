@@ -1,8 +1,4 @@
-# iShare-Capston-Project
-
-## logo
-
-![App logo](client/src/assets/images/whisperIcon.png)
+# ![App logo](client/src/assets/images/ishare-logo.png) iShare-Capston-Project
 
 ## Introduction
 
