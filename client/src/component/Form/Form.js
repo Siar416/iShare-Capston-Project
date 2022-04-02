@@ -12,6 +12,31 @@ function Form() {
     tag: "",
   });
 
+  const [formError, setFormError] = useState(false);
+
+  const validateForm = () => {
+    let formIsValid = false;
+
+    if (!formData.title) {
+      formIsValid = true;
+    }
+
+    if (!formData.secret) {
+      formIsValid = true;
+    }
+
+    if (!formData.author) {
+      formIsValid = true;
+    }
+
+    if (!formData.tag) {
+      formIsValid = true;
+    }
+
+    setFormError(formIsValid);
+    return formIsValid;
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -32,25 +57,28 @@ function Form() {
   //handle submit and clear the form after submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(process.env.REACT_APP_URL, {
-        title: formData.title,
-        secret: formData.secret,
-        author: formData.author,
-        tag: formData.tag,
-      })
-      .then((res) => {
-        console.log(res);
-        setFormData({
-          title: "",
-          secret: "",
-          author: "",
-          tag: "",
+    const hasError = validateForm();
+    if (!hasError) {
+      axios
+        .post(process.env.REACT_APP_URL, {
+          title: formData.title,
+          secret: formData.secret,
+          author: formData.author,
+          tag: formData.tag,
+        })
+        .then((res) => {
+          console.log(res);
+          setFormData({
+            title: "",
+            secret: "",
+            author: "",
+            tag: "",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
         });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    }
   };
 
   return (
@@ -106,35 +134,6 @@ function Form() {
         />
       </div>
 
-      {/* <div>
-        <label>Tag</label>
-        <select name="tag" htmlFor="tag" className="form-control">
-          <option name="shady" value="shady">
-            #shady
-          </option>
-
-          <option name="funny" value="funny">
-            #funny
-          </option>
-
-          <option name="scary" value="scary">
-            #scary
-          </option>
-
-          <option name="mysterious" value="mysterious">
-            #mysterious
-          </option>
-
-          <option name="adventurous" value="adventurous">
-            #adventurous
-          </option>
-
-          <option name="cool" value="cool">
-            #cool
-          </option>
-        </select>
-      </div> */}
-
       <button type="submit" class="btn btn-outline-light">
         Submit
       </button>
@@ -146,6 +145,10 @@ function Form() {
       >
         Reset
       </button>
+
+      {formError && (
+        <div className="form__validation">Please fill out all fields</div>
+      )}
     </form>
   );
 }

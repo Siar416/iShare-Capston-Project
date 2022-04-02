@@ -14,6 +14,16 @@
   box-shadow: $box-shadow;
 }
 
+.form__validation {
+  color: $white;
+  font-size: 12px;
+  background-color: $form-validation;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: max-content;
+}
+
 // apply flex column on screen size of below 990px
 @media (max-width: 990px) {
   .d-flex {
