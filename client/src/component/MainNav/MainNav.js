@@ -13,8 +13,6 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function MainNav({ setIsOpen, handleSearch, setIsOpenHowTo }) {
-  // moved handleSearch to App.js
-
   return (
     <Navbar bg="drk" expand="lg">
       <Container fluid>

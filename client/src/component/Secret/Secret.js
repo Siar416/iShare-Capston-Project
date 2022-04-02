@@ -8,15 +8,10 @@ import "./Secret.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 
-// const URL = "http://localhost:5000/secrets/";
-
 function Secret({ secret }) {
   const [likes, setLikes] = useState(secret.likes);
-  // TODO need to figure out why there is an infinit loop
-  // console.log(secret);
 
   const handleLike = () => {
-    // only allow user to like once based on local storage
     if (localStorage.getItem(secret._id)) {
       return;
     }
@@ -24,7 +19,7 @@ function Secret({ secret }) {
     localStorage.setItem(secret._id, true);
 
     axios
-      .patch(`${process.env.REACT_APP_URL}/${secret._id}`)
+      .patch(`${process.env.REACT_APP_API_URL}/${secret._id}`)
       .then((res) => {
         console.log(res.data.likes);
         setLikes(res.data.likes);
@@ -36,9 +31,8 @@ function Secret({ secret }) {
     e.preventDefault();
     console.log(e.target);
 
-    // delete from server
     axios
-      .delete(`${process.env.REACT_APP_URL}/${e.target.id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/${e.target.id}`)
       .then((res) => {
         console.log(res);
       })

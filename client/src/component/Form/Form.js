@@ -3,8 +3,6 @@ import axios from "axios";
 import "./Form.scss";
 const Filter = require("bad-words");
 
-// const URL = "http://localhost:5000/secrets";
-
 function Form() {
   const filter = new Filter();
   const [formData, setFormData] = useState({
@@ -49,7 +47,6 @@ function Form() {
     });
   };
 
-  //clear form
   const clearForm = () => {
     setFormData({
       title: "",
@@ -59,13 +56,12 @@ function Form() {
     });
   };
 
-  //handle submit and clear the form after submit
   const handleSubmit = (e) => {
     e.preventDefault();
     const hasError = validateForm();
     if (!hasError) {
       axios
-        .post(process.env.REACT_APP_URL, {
+        .post(process.env.REACT_APP_API_URL, {
           title: filter.clean(formData.title),
           secret: filter.clean(formData.secret),
           author: filter.clean(formData.author),

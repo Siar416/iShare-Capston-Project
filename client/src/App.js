@@ -21,18 +21,17 @@ const App = () => {
     setSearch(e.target.search.value);
   };
 
-  // on mount
   useEffect(() => {
     if (search === "") {
       axios
-        .get(process.env.REACT_APP_URL)
+        .get(process.env.REACT_APP_API_URL)
         .then((res) => {
           setSecrets(res.data);
         })
         .catch((err) => console.log(err));
     } else {
       axios
-        .get(`${process.env.REACT_APP_URL}/tags/${search}`)
+        .get(`${process.env.REACT_APP_API_URL}/tags/${search}`)
         .then((res) => {
           setSecrets(res.data);
           console.log(res.data);
