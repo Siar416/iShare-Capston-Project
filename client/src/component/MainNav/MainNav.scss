@@ -1,0 +1,31 @@
+@use "../../styles/partials/colors" as *;
+
+.d-flex {
+  align-items: center;
+}
+
+.whisper-icon {
+  background-color: $white;
+  border-radius: 5px;
+  border: 0.5px solid $white;
+  margin-right: 25px;
+}
+
+.title {
+  margin-left: 25px;
+}
+
+.title:hover {
+  background-color: $white;
+  color: $black;
+  border-radius: 5px;
+  border-radius: 5px;
+  border: 0.5px solid $white;
+  padding: 5px;
+  cursor: pointer;
+}
+.about {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}

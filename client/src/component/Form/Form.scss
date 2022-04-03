@@ -1,0 +1,34 @@
+@use "../../styles/partials/colors" as *;
+
+.form {
+  margin: 0 12px;
+  border: 1px solid $card-border-color;
+  padding: 25px;
+  box-shadow:  $box-shadow;
+  border-radius: 15px;
+}
+
+.form-control {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: $box-shadow;
+}
+
+.form__validation {
+  color: $white;
+  font-size: 12px;
+  background-color: $form-validation;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: max-content;
+}
+
+// apply flex column on screen size of below 990px
+@media (max-width: 990px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}
+
+
