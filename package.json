@@ -1,0 +1,22 @@
+{
+  "name": "ishare-capston-project",
+  "version": "1.0.0",
+  "description": "A simple application where people can anonymously share their thoughts and experiences or anything on their\r minds, without the fear of being judged by others. Inspired by the App \"Whisper\" (http://whisper.sh/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siar416/iShare-Capston-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Siar416/iShare-Capston-Project/issues"
+  },
+  "homepage": "https://github.com/Siar416/iShare-Capston-Project#readme"
+}
