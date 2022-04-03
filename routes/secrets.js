@@ -1,5 +1,12 @@
 import express from "express";
 import Secret from "../model/secret.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+
+// 👇️ "/home/john/Desktop/javascript"
+const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
@@ -88,6 +95,11 @@ router.get("/tags/:tag", (req, res) => {
       res.json(secret);
     }
   });
+});
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  // res.sendFile("index.html");
 });
 
 export default router;

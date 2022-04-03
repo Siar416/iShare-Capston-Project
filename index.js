@@ -22,21 +22,13 @@ app.use("/secrets", secretRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-const production = process.env.NODE_ENV === "production";
-if (production) {
-  app.use(express.static(path.join(__dirname, "client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  });
-}
+// app.use(express.static("./client/build"));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
-// // app.use(express.static("./client/build"));
-// app.use(express.static(path.join(__dirname, "client", "build")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-//   // res.sendFile("index.html");
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  // res.sendFile("index.html");
+});
 
 mongoose
   .connect(process.env.CONNECTION_DATABASE, {
