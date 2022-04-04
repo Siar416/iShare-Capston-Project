@@ -15,9 +15,9 @@ const AboutModal = ({ isOpen }) => {
       </Modal.Header>
       <Modal.Body>
         An aspiring Web Developer, who enjoys learning new skills and
-        technologies. I've always been intersted in tech. and how it can be used
+        technologies. I've always been interested in tech and how it can be used
         to solve problems and make a difference. I hope you enjoy my site and
-        would like to connect with me.
+        would like to connect with me. Please see the links below.
       </Modal.Body>
       <Modal.Footer>
         <a href="https://www.linkedin.com/in/siarwahidi/">
