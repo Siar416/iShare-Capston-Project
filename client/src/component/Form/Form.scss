@@ -1,26 +1,26 @@
 @use "../../styles/partials/colors" as *;
 
 .form {
-  margin: 0 12px;
-  border: 1px solid $card-border-color;
-  padding: 25px;
+  margin: 0 .75rem;
+  border: .0625rem solid $card-border-color;
+  padding: 1.5625rem;
   box-shadow:  $box-shadow;
-  border-radius: 15px;
+  border-radius: .9375rem;
 }
 
 .form-control {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: .625rem;
+  margin-bottom: .625rem;
   box-shadow: $box-shadow;
 }
 
 .form__validation {
   color: $white;
-  font-size: 12px;
+  font-size: .75rem;
   background-color: $form-validation;
-  padding: 5px;
-  border-radius: 5px;
-  margin-top: 20px;
+  padding: .3125rem;
+  border-radius: .3125rem;
+  margin-top: 1.25rem;
   width: max-content;
 }
 

@@ -17,7 +17,7 @@ function MainNav({ setIsOpen, handleSearch, setIsOpenHowTo }) {
     <Navbar bg="drk" expand="lg">
       <Container fluid>
         <img className="whisper-icon" src={whisperIcon} alt="logo" />
-        <Navbar.Brand style={{ color: "white", fontSize: "40px" }}>
+        <Navbar.Brand style={{ color: "white", fontSize: "2.5rem" }}>
           iShare
         </Navbar.Brand>
 
@@ -33,7 +33,7 @@ function MainNav({ setIsOpen, handleSearch, setIsOpenHowTo }) {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
+            style={{ maxHeight: "6.25rem" }}
             navbarScroll
           ></Nav>
 

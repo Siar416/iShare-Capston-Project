@@ -6,26 +6,26 @@
 
 .whisper-icon {
   background-color: $white;
-  border-radius: 5px;
-  border: 0.5px solid $white;
-  margin-right: 25px;
+  border-radius: .3125rem;
+  border: .0313rem solid $white;
+  margin-right: 1.5625rem;
 }
 
 .title {
-  margin-left: 25px;
+  margin-left: 1.5625rem;
 }
 
 .title:hover {
   background-color: $white;
   color: $black;
-  border-radius: 5px;
-  border-radius: 5px;
-  border: 0.5px solid $white;
-  padding: 5px;
+  border-radius: .3125rem;
+  border-radius: .3125rem;
+  border: .0313rem solid $white;
+  padding: .3125rem;
   cursor: pointer;
 }
 .about {
   display: flex;
   align-items: center;
-  margin-left: 25px;
+  margin-left: 1.5625rem;
 }

@@ -141,7 +141,7 @@ function Form() {
 
       <button
         type="reset"
-        style={{ marginLeft: "20px" }}
+        style={{ marginLeft: "1.25rem" }}
         class="btn btn-outline-light"
       >
         Reset
