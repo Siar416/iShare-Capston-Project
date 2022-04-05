@@ -1,5 +1,7 @@
 # ![App logo](client/src/assets/images/ishare-logo.png) iShare-Capston-Project
 
+visit my site @ https://ishare-capstone.herokuapp.com/
+
 ## Introduction
 
 A simple application where people can anonymously share their thoughts and experiences or anything on their
