@@ -1,6 +1,6 @@
 # ![App logo](client/src/assets/images/ishare-logo.png) iShare-Capston-Project
 
-visit my site @ https://ishare-capstone.herokuapp.com/
+Visit my site @ https://ishare-capstone.herokuapp.com/
 
 ## Introduction
 
@@ -33,13 +33,13 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 - Sass
 - Bootstrap
 
-## future plans
+## Future plans
 
 - Add a login system
 - Add a profile page
 - Add a share option
 - Add a comment system
 
-## demo video
+## Demo video
 
-- will be uploaded soon
+- Will be uploaded soon
