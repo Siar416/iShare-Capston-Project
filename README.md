@@ -20,9 +20,9 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 ## Installation - Run locally
 
 - Install the dependencies
-- check the sample .env file; include localhost:3000, server include localhost:5000
+- check the sample .env file
 - Run the command "npm install"
-- Run the command "npm start"
+- Run the command "npm start" in both client and root
 
 ## Technical stack
 
