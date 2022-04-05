@@ -10,7 +10,6 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 
-// 👇️ "/home/john/Desktop/javascript"
 const __dirname = path.dirname(__filename);
 
 const app = express();
@@ -20,7 +19,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use(cors());
 app.use("/secrets", secretRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // app.use(express.static("./client/build"));
 app.use(express.static(path.join(__dirname, "client", "build")));

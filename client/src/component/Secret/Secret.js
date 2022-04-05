@@ -19,7 +19,7 @@ function Secret({ secret }) {
     localStorage.setItem(secret._id, true);
 
     axios
-      .patch(`${process.env.REACT_APP_API_URL}/${secret._id}`)
+      .patch(`${process.env.REACT_APP_API_URL}/secrets/${secret._id}`)
       .then((res) => {
         console.log(res.data.likes);
         setLikes(res.data.likes);
@@ -32,7 +32,7 @@ function Secret({ secret }) {
     console.log(e.target);
 
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/${e.target.id}`)
+      .delete(`${process.env.REACT_APP_API_URL}/secrets/${e.target.id}`)
       .then((res) => {
         console.log(res);
       })

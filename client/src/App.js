@@ -24,14 +24,14 @@ const App = () => {
   useEffect(() => {
     if (search === "") {
       axios
-        .get(process.env.REACT_APP_API_URL)
+        .get(`${process.env.REACT_APP_API_URL}/secrets`)
         .then((res) => {
           setSecrets(res.data);
         })
         .catch((err) => console.log(err));
     } else {
       axios
-        .get(`${process.env.REACT_APP_API_URL}/tags/${search}`)
+        .get(`${process.env.REACT_APP_API_URL}/secrets/tags/${search}`)
         .then((res) => {
           setSecrets(res.data);
           console.log(res.data);

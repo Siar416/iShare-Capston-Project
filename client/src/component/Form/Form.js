@@ -61,7 +61,7 @@ function Form() {
     const hasError = validateForm();
     if (!hasError) {
       axios
-        .post(process.env.REACT_APP_API_URL, {
+        .post(`${process.env.REACT_APP_API_URL}/secrets`, {
           title: filter.clean(formData.title),
           secret: filter.clean(formData.secret),
           author: filter.clean(formData.author),
