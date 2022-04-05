@@ -1,5 +1,7 @@
 # ![App logo](client/src/assets/images/ishare-logo.png) iShare-Capston-Project
 
+Visit my site @ https://ishare-capstone.herokuapp.com/
+
 ## Introduction
 
 A simple application where people can anonymously share their thoughts and experiences or anything on their
@@ -18,9 +20,9 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 ## Installation - Run locally
 
 - Install the dependencies
-- check the sample .env file; include localhost:3000, server include localhost:5000
+- check the sample .env file
 - Run the command "npm install"
-- Run the command "npm start"
+- Run the command "npm start" in both client and root
 
 ## Technical stack
 
@@ -31,13 +33,13 @@ minds, without the fear of being judged by others. Inspired by the App "Whisper"
 - Sass
 - Bootstrap
 
-## future plans
+## Future plans
 
 - Add a login system
 - Add a profile page
 - Add a share option
 - Add a comment system
 
-## demo video
+## Demo video
 
-- will be uploaded soon
+- Will be uploaded soon

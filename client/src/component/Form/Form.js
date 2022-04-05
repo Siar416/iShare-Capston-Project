@@ -83,13 +83,13 @@ function Form() {
   };
 
   return (
-    <form class="form" onSubmit={handleSubmit} onReset={clearForm}>
+    <form className="form" onSubmit={handleSubmit} onReset={clearForm}>
       <div>
         <label htmlFor="title">Secret Title</label>
         <input
           maxLength="60"
           type="text"
-          class="form-control"
+          className="form-control"
           name="title"
           value={formData.title}
           onChange={handleChange}
@@ -103,7 +103,7 @@ function Form() {
         <input
           maxLength="60"
           type="text"
-          class="form-control"
+          className="form-control"
           name="author"
           value={formData.author}
           onChange={handleChange}
@@ -115,7 +115,7 @@ function Form() {
         <label htmlFor="secret">Secret Message</label>
         <input
           maxLength="60"
-          class="form-control"
+          className="form-control"
           name="secret"
           value={formData.secret}
           onChange={handleChange}
@@ -127,7 +127,7 @@ function Form() {
         <label htmlFor="secret">Tag</label>
         <input
           maxLength="60"
-          class="form-control"
+          className="form-control"
           name="tag"
           value={formData.tag}
           onChange={handleChange}
@@ -135,14 +135,14 @@ function Form() {
         />
       </div>
 
-      <button type="submit" class="btn btn-outline-light">
+      <button type="submit" className="btn btn-outline-light">
         Submit
       </button>
 
       <button
         type="reset"
         style={{ marginLeft: "1.25rem" }}
-        class="btn btn-outline-light"
+        className="btn btn-outline-light"
       >
         Reset
       </button>
