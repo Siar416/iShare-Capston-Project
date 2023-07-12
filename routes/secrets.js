@@ -71,26 +71,31 @@ router.patch("/:id", (req, res) => {
 });
 
 // delete a secret
-router.delete("/:id", (req, res) => {
-  Secret.findByIdAndDelete(req.params.id, (err, secret) => {
-    if (err) {
-      res.status(404).send("secret not found");
+router.delete("/:id", async (req, res) => {
+  try {
+    const secret = await Secret.findByIdAndDelete(req.params.id);
+    if (!secret) {
+      res.status(404).send("Secret not found");
     } else {
-      res.status(201).json(`Item ${req.params.id} deleted`);
+      res.status(201).json(`Item ${req.params.id} was deleted`);
     }
-  });
+  } catch (error) {
+    res.status(500).send("Error deleting secret");
+  }
 });
 
 // get a secret by tags
-router.get("/tags/:tag", (req, res) => {
-  console.log(req.params);
-  Secret.find({ tag: req.params.tag }, (err, secret) => {
-    if (err) {
-      res.status(404).send("secret not found");
+router.get("/tags/:tag", async (req, res) => {
+  try {
+    const secret = await Secret.find({ tag: req.params.tag });
+    if (secret.length === 0) {
+      res.status(404).send("Secret not found");
     } else {
-      res.json(secret);
+      res.status(200).json(secret);
     }
-  });
+  } catch (error) {
+    res.status(500).send("Error locating secret");
+  }
 });
 
 export default router;
