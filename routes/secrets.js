@@ -4,40 +4,43 @@ import Secret from "../model/secret.js";
 const router = express.Router();
 
 // Get details of all secrets
-router.get("/", (req, res) => {
-  Secret.find((err, secrets) => {
-    if (err) {
-      res.send(err);
+router.get("/", async (req, res) => {
+  try {
+    const secrets = await Secret.find();
+    if (secrets.length === 0) {
+      res.status(404).send("No secrets found.");
     } else {
-      res.json(secrets);
+      res.status(200).json(secrets);
     }
-  });
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 // post a secret
-router.post("/", (req, res) => {
-  if (
-    !req.body.title ||
-    !req.body.secret ||
-    !req.body.author ||
-    !req.body.tag
-  ) {
-    res.status(400).send("Please fill out all fields");
-    return;
-  }
+router.post("/", async (req, res) => {
+  try {
+    const { title, secret, author, tag } = req.body;
 
-  const secret = new Secret();
-  secret.title = req.body.title;
-  secret.secret = req.body.secret;
-  secret.author = req.body.author;
-  secret.tag = req.body.tag.replace(/\s/g, "");
-  secret.save((err) => {
-    if (err) {
-      res.status(406).send("Error saving secret");
-    } else {
-      res.status(201).json({ message: "Secret successfully posted!" });
+    if (!title || !secret || !author || !tag) {
+      res.status(400).send("Please fill out all fields");
+      return;
     }
-  });
+
+    const trimmedTag = tag.replace(/\s/g, "");
+
+    const newSecret = new Secret({
+      title,
+      secret,
+      author,
+      tag: trimmedTag,
+    });
+
+    await newSecret.save();
+    res.status(201).json({ message: "Secret successfully posted!" });
+  } catch (error) {
+    res.status(406).send("Error saving secret");
+  }
 });
 
 // get a secret by id
